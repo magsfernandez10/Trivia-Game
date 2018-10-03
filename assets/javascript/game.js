@@ -1,7 +1,7 @@
 $(document).ready(function () {
 
     //var questions = [];
-    var questionStore = [
+    var questions = [
         {
             q: "What is Michael Scott's middle name??",
             a: ["Gary", "Mike", "Jim", "Bob"],
@@ -46,14 +46,14 @@ $(document).ready(function () {
     var questionDisplay = function () {
         $(".question-area :not('#submit')").empty();
 
-        for (var i = 0; i < questionStore.length; i++) {
-            console.log(questionStore[i]);
-            var questionDiv = "<div class ='displayQues'>" + (i+1) + "." + questionStore[i].q + "</div";
+        for (var j = 0; j < questions.length; j++) {
+            //console.log(questions[i]);
+            var questionDiv = "<div class ='displayQues'>" + (j+1) + "." + questions[j].q + "</div";
             $(".question-area").append(questionDiv);
 
-            for (var j = 0; j < questionStore[j].a.length; j++) {
-                var answerButton = '<input type="radio" name"' + questionStore[i].name + '" value="' + questionStore[i].a[j] + '"/>' + questionStore[i].a[j];
-                $(".answer-area").append(answerButton);
+            for (var i = 0; i <=3; i++) {
+                var answerButton = '<input type="radio" name"' + questions[j].name + '" value="' + questions[j].a[i] + '"/>' + questions[j].a[i];
+                $(".question-area").append(answerButton);
             }
 
 
@@ -76,9 +76,9 @@ $(document).ready(function () {
 
 
                 for (var i = 0; i < questions.length; i++) {
-                    if ($('input:radio[name="' + questionStore[i].name + '"]:checked').val() === questionStore[i].correct) {
+                    if ($('input:radio[name="' + questions[i].name + '"]:checked').val() === questions[i].correct) {
                         correctAnswers++;
-                    } else if ($('input:radio[name="' + questionStore[i].name + '"]:checked').val() === undefined) {
+                    } else if ($('input:radio[name="' + questions[i].name + '"]:checked').val() === undefined) {
                         unAnswered++;
                     } else {
                         wrongAnswers++;
@@ -110,11 +110,11 @@ $(document).ready(function () {
         var unAnswered = 0;
     
         // loop through correctArray & radioName to match html elements & answers
-        for (var i = 0; i < questionStore.length; i++) {
+        for (var i = 0; i < questions.length; i++) {
     
-            if ($('input:radio[name="' + questionStore[i].name + '"]:checked').val() === questionStore[i].correct) {
+            if ($('input:radio[name="' + questions[i].name + '"]:checked').val() === questions[i].correct) {
                 correctAnswers++;
-            } else if ($('input:radio[name="' + questionStore[i].name + '"]:checked').val() === undefined) {
+            } else if ($('input:radio[name="' + questions[i].name + '"]:checked').val() === undefined) {
                 unAnswered++;
             } else {
                 wrongAnswers++;
@@ -134,10 +134,8 @@ $(document).ready(function () {
     $('#wrong').append('<span>' + wrongAnswers + '</span>');
     $('#unanswered').append('<span>' + unAnswered + '</span>');
 
-    });
-
-
-
+    })
 
 
 });
+
