@@ -1,0 +1,61 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+
+    <!-- Here we added a link to the jQuery library -->
+    <script src='https://code.jquery.com/jquery-3.3.1.min.js' integrity='sha256-FgpCb/KJQlLNfOu91ta32o/NMZxltwRo8QtmkMRdAu8='
+        crossorigin='anonymous'></script>
+
+    <!--Google fonts-->
+    <link href="https://fonts.googleapis.com/css?family=Montserrat" rel="stylesheet">
+
+    <!--Here we added a link to the style css sheet-->
+    <link rel="stylesheet" href="assets/css/style.css">
+
+    <!--here we added a link to the javascript file-->
+    <script type="text/javascript" src="assets/javascript/game.js"></script>
+
+</head>
+
+<body>
+    <header>
+        <img class="logo" src="assets/images/the_office.jpeg">
+    </header>
+
+
+    <div id="start">
+        <h3>The Office Trivia Game!</h3>
+        <p>You have 60 seconds to guess Five questions.</p>
+        <button type="button" id="start-btn">START</button>
+    </div>
+
+    <div class="container">
+        <div class="timeRemaining">Time Remaining:<br>
+            <span id="time-remain">60</span>
+        </div>
+
+        <div id="results">
+            <h2>Let's see how you did!</h2>
+            <p id="correct">Correct Answers: </p>
+            <p id="wrong">Wrong Answers: </p>
+            <p id="unanswered">Unanswered: </p>
+        </div>
+
+        <div class="questions">
+            <div class="question-area"></div>
+            <div class="answer-area">
+                <ul class="answer-table"></ul>
+            </div>
+
+            <button type="button" id="submit">SUBMIT</button>
+        </div>
+
+
+</body>
+
+</html>
