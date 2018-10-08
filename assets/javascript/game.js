@@ -29,7 +29,17 @@ $(document).ready(function () {
             correctAnswer: "Pam",
             name: "namess"
 
+        },
+
+        {
+            q: "What does Dwight grow on his farm?",
+            a: ["Tomatoes", "Lettuce", "Beets", "Oranges"],
+            correctAnswer: "Beets",
+            name: "fruit"
+
         }
+
+
     ]
 
 
