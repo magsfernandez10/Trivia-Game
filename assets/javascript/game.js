@@ -38,6 +38,7 @@ $(document).ready(function () {
 
     var startGame = $("#start-btn").on('click', function () {
         $("#start").fadeOut(400).hide();
+        $(".logo").fadeOut(400).hide()
         $(".container").fadeIn(400).show();
         countdown(60);
         questionDisplay();
@@ -45,6 +46,7 @@ $(document).ready(function () {
 
     var questionDisplay = function () {
         $(".question-area :not('#submit')").empty();
+        
 
         for (var j = 0; j < questions.length; j++) {
             //console.log(questions[i]);
@@ -104,6 +106,7 @@ $(document).ready(function () {
     }; // end countdown
 
     var gradeQuiz = $('#submit').on('click', function() {
+        $(".logo").fadeIn(400).show();
 
         var correctAnswers = 0;
         var wrongAnswers = 0;
